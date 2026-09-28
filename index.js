@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import "dotenv/config";
 import fs from "node:fs";
+import readLine from "readline";
 
 
 const openAI = new OpenAI({
@@ -12,14 +13,43 @@ const instructions = fs.readFileSync(
 	"utf-8"
 );
 
-async function main() {
-	const response = await openAI.responses.create({
-		model: "gpt-5.6",
-		input: "Explain kubernetes to me",
-		instructions,
-	});
+const rl = readLine.createInterface({
+	input: process.stdin,
+	output: process.stdout,
 
-	console.log(response.output_text);
+});
+
+let previousResponseId = null;
+
+async function chat() {
+	rl.question("AI:  ", async(query) => {
+		try {
+			const response = await openAI.responses.create({
+				model: "gpt-5.6",
+				input: query,
+				instructions,
+				...(previousResponseId && {
+          			previous_response_id: previousResponseId,
+        		}),
+			});
+
+			previousResponseId = response.id;
+			console.log(response.output_text);
+
+		} catch(error) {
+			console.log('error::', error);
+		}
+
+		if(query === 'exit') {
+			rl.close();
+		} else {
+			chat();
+		}
+	});	
 }
 
-main()
+chat();
+
+
+
+
