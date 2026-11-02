@@ -1,55 +1,44 @@
 import OpenAI from "openai";
-import "dotenv/config";
-import fs from "node:fs";
-import readLine from "readline";
 
+import readline from "node:readline/promises";
+import { readFile } from "node:fs/promises";
+import { stdin as input, stdout as output } from "node:process";
 
-const openAI = new OpenAI({
-	apiKey: process.env.OPENAI_API_KEY, 
-});
+const client = new OpenAI();
 
-const instructions = fs.readFileSync(
-	"./prompts/instructions.txt",
-	"utf-8"
+const instructions = await readFile(
+  new URL("./prompts/instructions.txt", import.meta.url),
+  "utf8"
 );
 
-const rl = readLine.createInterface({
-	input: process.stdin,
-	output: process.stdout,
+const rl = readline.createInterface({ input, output });
 
-});
+// Chain responses so the model remembers earlier turns in this session
+let previousResponseId;
 
-let previousResponseId = null;
+console.log('Chat started. Type "exit" to end the session.\n');
 
-async function chat() {
-	rl.question("AI:  ", async(query) => {
-		try {
-			const response = await openAI.responses.create({
-				model: "gpt-5.6",
-				input: query,
-				instructions,
-				...(previousResponseId && {
-          			previous_response_id: previousResponseId,
-        		}),
-			});
+while (true) {
+  const prompt = (await rl.question("You: ")).trim();
 
-			previousResponseId = response.id;
-			console.log(response.output_text);
+  if (prompt.toLowerCase() === "exit") break;
+  if (!prompt) continue;
 
-		} catch(error) {
-			console.log('error::', error);
-		}
+  try {
+    const response = await client.responses.create({
+      model: "gpt-6-astra",
+      // Instructions aren't carried over by previous_response_id, so send them every turn
+      instructions,
+      input: prompt,
+      previous_response_id: previousResponseId,
+    });
 
-		if(query === 'exit') {
-			rl.close();
-		} else {
-			chat();
-		}
-	});	
+    previousResponseId = response.id;
+    console.log(`\nAssistant: ${response.output_text}\n`);
+  } catch (err) {
+    console.error(`\nError: ${err.message}\n`);
+  }
 }
 
-chat();
-
-
-
-
+rl.close();
+console.log("Session ended.");

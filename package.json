@@ -1,17 +1,9 @@
 {
-  "name": "ai-agents-protos",
-  "version": "1.0.0",
-  "description": "Prototypes for ai agents",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file=.env index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^18.0.4",
-    "openai": "^7.23.0"
-  },
-  "type": "module"
+    "openai": "^7.47.0"
+  }
 }
