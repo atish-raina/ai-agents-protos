@@ -1,0 +1,15 @@
+{
+  "currency": "USD",
+  "discount_policy": {
+    "max_rep_discount_percent": 15,
+    "max_manager_discount_percent": 30,
+    "billing_term_discounts": { "monthly": 0, "annual": 10, "multi_year": 18 }
+  },
+  "products": [
+    { "product_sku": "CORE-STD", "name": "Core Platform - Standard", "unit": "seat", "list_price_monthly": 49, "min_quantity": 5 },
+    { "product_sku": "CORE-PRO", "name": "Core Platform - Pro", "unit": "seat", "list_price_monthly": 89, "min_quantity": 10 },
+    { "product_sku": "ANALYTICS", "name": "Advanced Analytics Add-on", "unit": "seat", "list_price_monthly": 25, "min_quantity": 1 },
+    { "product_sku": "API-ACCESS", "name": "API Access", "unit": "org", "list_price_monthly": 500, "min_quantity": 1 },
+    { "product_sku": "ONBOARD", "name": "Premium Onboarding", "unit": "one-time", "list_price_one_time": 5000, "min_quantity": 1 }
+  ]
+}

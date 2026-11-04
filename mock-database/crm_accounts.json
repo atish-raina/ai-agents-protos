@@ -1,0 +1,70 @@
+[
+  {
+    "account_id": "ACC-1001",
+    "company_name": "Northwind Logistics",
+    "domain": "northwindlogistics.com",
+    "industry": "Logistics",
+    "employee_count": 1200,
+    "region": "North America",
+    "owner": "Priya Shah",
+    "pipeline_stage": "Negotiation",
+    "contacts": [
+      { "name": "Daniel Reyes", "title": "VP Operations", "email": "daniel.reyes@northwindlogistics.com", "role": "Decision maker" },
+      { "name": "Grace Kim", "title": "IT Manager", "email": "grace.kim@northwindlogistics.com", "role": "Technical evaluator" }
+    ],
+    "deals": [
+      { "deal_id": "DL-5001", "name": "Fleet Tracking Rollout", "amount": 84000, "stage": "Negotiation", "status": "open", "close_date": "2026-12-15" },
+      { "deal_id": "DL-4120", "name": "Pilot Program", "amount": 12000, "stage": "Closed Won", "status": "won", "close_date": "2026-03-10" }
+    ]
+  },
+  {
+    "account_id": "ACC-1002",
+    "company_name": "Brightleaf Health",
+    "domain": "brightleafhealth.io",
+    "industry": "Healthcare",
+    "employee_count": 450,
+    "region": "Europe",
+    "owner": "Marcus Lee",
+    "pipeline_stage": "Discovery",
+    "contacts": [
+      { "name": "Sofia Bauer", "title": "Head of Procurement", "email": "sofia.bauer@brightleafhealth.io", "role": "Economic buyer" }
+    ],
+    "deals": [
+      { "deal_id": "DL-5034", "name": "Patient Portal Analytics", "amount": 36000, "stage": "Discovery", "status": "open", "close_date": "2027-02-28" }
+    ]
+  },
+  {
+    "account_id": "ACC-1003",
+    "company_name": "Cobalt Retail Group",
+    "domain": "cobaltretail.com",
+    "industry": "Retail",
+    "employee_count": 3800,
+    "region": "North America",
+    "owner": "Priya Shah",
+    "pipeline_stage": "Customer",
+    "contacts": [
+      { "name": "Aisha Okafor", "title": "CFO", "email": "aisha.okafor@cobaltretail.com", "role": "Executive sponsor" },
+      { "name": "Tom Novak", "title": "Director of Sales Ops", "email": "tom.novak@cobaltretail.com", "role": "Champion" }
+    ],
+    "deals": [
+      { "deal_id": "DL-3877", "name": "Enterprise License", "amount": 210000, "stage": "Closed Won", "status": "won", "close_date": "2025-11-30" },
+      { "deal_id": "DL-5102", "name": "Renewal + Expansion", "amount": 245000, "stage": "Proposal", "status": "open", "close_date": "2026-11-30" }
+    ]
+  },
+  {
+    "account_id": "ACC-1004",
+    "company_name": "Quartz Fintech",
+    "domain": "quartzfintech.com",
+    "industry": "Financial Services",
+    "employee_count": 160,
+    "region": "Asia Pacific",
+    "owner": "Marcus Lee",
+    "pipeline_stage": "Closed Lost",
+    "contacts": [
+      { "name": "Ravi Menon", "title": "CTO", "email": "ravi.menon@quartzfintech.com", "role": "Decision maker" }
+    ],
+    "deals": [
+      { "deal_id": "DL-4655", "name": "Risk Dashboard", "amount": 28000, "stage": "Closed Lost", "status": "lost", "close_date": "2026-08-20", "loss_reason": "Chose competitor on price" }
+    ]
+  }
+]

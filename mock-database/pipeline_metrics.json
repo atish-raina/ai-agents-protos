@@ -1,0 +1,24 @@
+[
+  {
+    "owner": "Priya Shah",
+    "team": "Enterprise",
+    "quota": 600000,
+    "periods": [
+      { "start_date": "2026-07-01", "end_date": "2026-09-30", "pipeline_value": 920000, "win_rate": 0.31, "avg_deal_size": 72000, "sales_cycle_length": 64, "quota_attainment": 0.94,
+        "stage_conversion": { "discovery_to_demo": 0.62, "demo_to_proposal": 0.48, "proposal_to_negotiation": 0.55, "negotiation_to_won": 0.71 } },
+      { "start_date": "2026-10-01", "end_date": "2026-12-31", "pipeline_value": 1080000, "win_rate": 0.34, "avg_deal_size": 81000, "sales_cycle_length": 59, "quota_attainment": 0.41,
+        "stage_conversion": { "discovery_to_demo": 0.65, "demo_to_proposal": 0.5, "proposal_to_negotiation": 0.58, "negotiation_to_won": 0.74 } }
+    ]
+  },
+  {
+    "owner": "Marcus Lee",
+    "team": "Mid-Market",
+    "quota": 300000,
+    "periods": [
+      { "start_date": "2026-07-01", "end_date": "2026-09-30", "pipeline_value": 410000, "win_rate": 0.24, "avg_deal_size": 29000, "sales_cycle_length": 38, "quota_attainment": 0.78,
+        "stage_conversion": { "discovery_to_demo": 0.55, "demo_to_proposal": 0.42, "proposal_to_negotiation": 0.47, "negotiation_to_won": 0.63 } },
+      { "start_date": "2026-10-01", "end_date": "2026-12-31", "pipeline_value": 455000, "win_rate": 0.27, "avg_deal_size": 31000, "sales_cycle_length": 35, "quota_attainment": 0.29,
+        "stage_conversion": { "discovery_to_demo": 0.58, "demo_to_proposal": 0.44, "proposal_to_negotiation": 0.5, "negotiation_to_won": 0.66 } }
+    ]
+  }
+]
